@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:href": "ng build --base-href ./",
+    "copy:docs": "copyfiles -f dist/counter-01/browser/* docs/",
+    "del:docs": "del docs",
+    "build:ghpages": "npm run del:docs && npm run build:href && npm run copy:docs"
   },
   "private": true,
   "dependencies": {
